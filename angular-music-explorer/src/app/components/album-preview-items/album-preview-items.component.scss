@@ -1,0 +1,25 @@
+:host {
+  max-width: 160px;
+  margin: 10px;
+  text-decoration: none;
+  color: unset;
+}
+.card {
+  width: 160px;
+  height:160px;
+}
+lazy-img {
+  object-fit: cover;
+}
+.label {
+  margin: 8px 0 16px;
+  display: block;
+  white-space: nowrap;
+  & * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.index {
+  font-weight: 800;
+}

@@ -1,0 +1,9 @@
+<div class="card">
+  <lazy-img [src]="album.attributes.artwork.url | formatArtworkUrl:200"></lazy-img>
+</div>
+<div class="label">
+  <h3>
+    <span class="index">{{index + 1 }}</span> {{album.attributes.name}}
+  </h3>
+  <p>{{album.attributes.artistName}}</p>
+</div>

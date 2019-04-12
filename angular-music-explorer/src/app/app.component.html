@@ -1,0 +1,6 @@
+<nav>
+  <a routerLink="/browse">Browse</a> |
+  <a routerLink="/search">Search</a> |
+  <span (click)="auth()">{{ musickitConfig.isAuthorized ? 'Logout' : 'Login' }}</span>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,19 @@
+<h1>{{album?.attributes.name}}</h1>
+
+<preview-header [collection]="album"></preview-header>
+<ng-container *ngIf="album; else isLoading">
+  <ul>
+    <song-item *ngFor="let song of album.relationships.tracks.data; let i = index" [song]="song" [index]="i">
+    </song-item>
+  </ul>
+</ng-container>
+
+<ng-template #isLoading>
+  <div>
+    Loading...
+  </div>
+</ng-template>
+
+<ng-container *ngIf="isError">
+  <h1>There's an error!</h1>
+</ng-container>

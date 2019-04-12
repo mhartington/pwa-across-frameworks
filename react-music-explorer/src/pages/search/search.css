@@ -1,0 +1,9 @@
+
+ul {
+  padding: 0;
+}
+h2 {
+  position: sticky;
+  top: 0;
+  background: white;
+}

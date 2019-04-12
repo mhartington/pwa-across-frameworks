@@ -1,0 +1,11 @@
+<li>
+  <div class="thumbnail">
+    <lazy-img [src]="song.attributes.artwork.url | formatArtworkUrl:60" alt=""></lazy-img>
+  </div>
+  <p class="index" *ngIf="index !== null">{{index +1 }}</p>
+  <div class="label">
+    <h3>{{song.attributes.name}} </h3>
+    <p *ngIf="song.attributes.artistName">{{song.attributes.artistName}}</p>
+  </div>
+  <p class="note" *ngIf="song.attributes.durationInMillis">{{song.attributes.durationInMillis | msToMins}}</p>
+</li>

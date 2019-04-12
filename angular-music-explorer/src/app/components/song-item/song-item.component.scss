@@ -1,0 +1,29 @@
+li {
+  display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.thumbnail {
+  height: 80px;
+  width: 80px;
+  padding-right: 10px;
+}
+.label {
+  display: block;
+  flex: 1;
+    white-space: nowrap;
+  overflow: hidden;
+  h3,
+  .note * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.index {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  padding-right: 10px;
+}
+.note {
+  font-variant-numeric: tabular-nums;
+}

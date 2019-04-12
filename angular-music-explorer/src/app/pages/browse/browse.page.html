@@ -1,0 +1,19 @@
+<main>
+  <div *ngIf="isLoading; else hasContent">
+    Loading...
+    </div>
+
+    <ng-template #hasContent>
+
+      <h1>Top Albums</h1>
+      <div class="top-list">
+        <a album-preview-item *ngFor="let album of topAlbums; let i = index" [album]="album" [index]="i" routerLink="/album/{{album.id}}"></a>
+      </div>
+
+      <h1>Top Playlists</h1>
+      <div class="top-list">
+        <a album-preview-item *ngFor="let playlist of topPlaylists; let i = index" [album]="playlist" [index]="i" routerLink="/playlist/{{playlist.id}}"></a>
+      </div>
+
+    </ng-template>
+</main>
