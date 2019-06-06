@@ -22,7 +22,7 @@ export class LazyImgComponent implements AfterViewInit {
 
   @HostBinding('class.loaded') isLoaded = false;
 
-  @ViewChild('lazyImage') lazyImage: ElementRef<HTMLImageElement>;
+  @ViewChild('lazyImage', { static: true }) lazyImage: ElementRef<HTMLImageElement>;
 
   constructor(private cd: ChangeDetectorRef) {}
 

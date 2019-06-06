@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "plugins": [{ "name": "vue-ts-plugin" }],
     "target": "esnext",
     "module": "esnext",
     "strict": true,

@@ -6,19 +6,19 @@ const routes: Routes = [
   { path: '', component: LandingPage },
   {
     path: 'browse',
-    loadChildren: './pages/browse/browse.module#BrowsePageModule'
+    loadChildren: () => import('./pages/browse/browse.module').then(m => m.BrowsePageModule)
   },
   {
     path: 'search',
-    loadChildren: './pages/search/search.module#SearchModule'
+    loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule)
   },
   {
     path: 'album/:id',
-    loadChildren: './pages/album/album.module#AlbumPageModule'
+    loadChildren: () => import('./pages/album/album.module').then(m => m.AlbumPageModule)
   },
   {
     path: 'playlist/:id',
-    loadChildren: './pages/playlists/playlists.module#PlaylistsPageModule'
+    loadChildren: () => import('./pages/playlists/playlists.module').then(m => m.PlaylistsPageModule)
   }
 ];
 
