@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { EMPTY } from 'rxjs';
 import {
@@ -16,7 +16,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss']
 })
-export class SearchPage {
+export class SearchPage implements OnInit {
   public hasSearch = false;
   public isError = false;
   public isLoading = false;
@@ -29,7 +29,7 @@ export class SearchPage {
     private api: MusickitService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
   searchCleared() {
     this.hasSearch = false;
     this.isError = false;
@@ -66,7 +66,7 @@ export class SearchPage {
             })
           )
         ),
-        tap(() => this.isLoading = false)
+        tap(() => (this.isLoading = false))
       )
       .subscribe(results => {
         this.albumResults = results['albums']
@@ -78,6 +78,7 @@ export class SearchPage {
         this.playlistResults = results['playlists']
           ? results['playlists']['data']
           : null;
+          import('../../components/song-item/song-item.component')
       });
     const qp = this.route.snapshot.queryParams.query;
     this.searchInput.setValue(qp);

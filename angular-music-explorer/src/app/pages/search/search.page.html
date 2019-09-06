@@ -26,12 +26,12 @@
   <h3>Well this is embarrassing, there seems to be an issue fetching data! </h3>
 </div>
 <ul>
-  <ul *ngIf="albumResults">
+  <ul *ngIf="albumResults && componentLoaded">
     <h2>Albums</h2>
     <song-item *ngFor="let album of albumResults" [song]="album" routerLink="/album/{{album.id}}"></song-item>
   </ul>
 
-  <ul *ngIf="playlistResults">
+  <ul *ngIf="playlistResults && componentLoaded">
     <h2>Playlists</h2>
     <song-item *ngFor="let playlist of playlistResults" [song]="playlist" routerLink="/playlist/{{playlist.id}}"></song-item>
   </ul>

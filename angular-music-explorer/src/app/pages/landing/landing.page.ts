@@ -12,7 +12,6 @@ export class LandingPage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-
     fromEvent(window, 'beforeinstallprompt').subscribe((res: any) => {
       console.log(res);
       this.ev = res;
@@ -22,11 +21,12 @@ export class LandingPage implements OnInit {
   navigate() {
     this.router.navigateByUrl('/browse', { replaceUrl: true });
   }
+
   push() {
     if (this.ev) {
       this.ev.preventDefault();
       this.ev.prompt();
-      this.ev.userChoice.then(choiceResult => {
+      this.ev.userChoice.then((choiceResult: { outcome: string; }) => {
         if (choiceResult.outcome === 'accepted') {
           console.log('User accepted the A2HS prompt');
         } else {
@@ -34,6 +34,6 @@ export class LandingPage implements OnInit {
         }
       });
     }
-  this.navigate();
+    this.navigate();
   }
 }

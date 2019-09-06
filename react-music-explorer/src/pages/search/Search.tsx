@@ -80,7 +80,6 @@ export default class SearchPage extends Component<
                   </Link>
                 ))}
               </ul>
-
               <ul>
                 <h2>Playlists</h2>
                 {this.state.playlistResults.map(

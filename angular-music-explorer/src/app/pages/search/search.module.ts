@@ -10,13 +10,13 @@ import { FormatArtworkUrlModule } from '../../pipes/formatArtworkUrl/format-artw
 @NgModule({
   imports: [
     CommonModule,
-    SongItemModule,
     FormatArtworkUrlModule,
     RouterModule.forChild([{ path: '', component: SearchPage }]),
     TimePipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SongItemModule
   ],
   declarations: [SearchPage],
 })
-export class SearchModule {}
+export class SearchModule { }
 
