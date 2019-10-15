@@ -14,7 +14,7 @@ export default new Router({
     {
       path: '/browse',
       name: 'browse',
-      component: () => import('./views/Browse.vue')
+      component: () => import(/* webpackChunkName: "browse" */'./views/Browse.vue')
     },
     {
       path: '/search',
